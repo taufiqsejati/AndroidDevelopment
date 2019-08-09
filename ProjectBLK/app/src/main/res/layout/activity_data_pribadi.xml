@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/photo1"
+    tools:context=".DataPribadi.DataPribadi">
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/darker_gray"
+        android:text="Data Pribadi"
+        android:textAlignment="center"
+        android:textColor="?android:attr/colorForeground"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView29"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="46dp"
+        android:text="Nama"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView30"
+        android:layout_alignBottom="@+id/textView30"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:text="Muhammad Taufiq"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView40"
+        android:layout_alignBottom="@+id/textView40"
+        android:layout_alignLeft="@+id/textView31"
+        android:layout_alignStart="@+id/textView31"
+        android:text="Jakarta"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView30"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Tempat Lahir"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView41"
+        android:layout_alignBottom="@+id/textView41"
+        android:layout_alignLeft="@+id/textView34"
+        android:layout_alignStart="@+id/textView34"
+        android:text="23 Juli 1994"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView34"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Tanggal Lahir"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView42"
+        android:layout_alignBottom="@+id/textView42"
+        android:layout_alignLeft="@+id/textView35"
+        android:layout_alignStart="@+id/textView35"
+        android:text="Laki-Laki"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView35"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Jenis Kelamin"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView43"
+        android:layout_alignBottom="@+id/textView43"
+        android:layout_alignLeft="@+id/textView36"
+        android:layout_alignStart="@+id/textView36"
+        android:text="Islam"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView36"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Agama"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView43"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Alamat"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView38"
+        android:layout_alignBottom="@+id/textView38"
+        android:layout_alignLeft="@+id/textView37"
+        android:layout_alignStart="@+id/textView37"
+        android:text="Graha Prima"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView38"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Telpon"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView44"
+        android:layout_alignStart="@+id/textView44"
+        android:layout_alignTop="@+id/textView39"
+        android:text="0895387275199"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:text="Dibuat oleh Muhammad Taufiq"
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/darker_gray"/>
+
+</RelativeLayout>

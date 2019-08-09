@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WasitDigital.WasitDigital">
+
+    <Button
+        android:id="@+id/button_toast_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/show_count_a"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/show_count_a"
+        android:layout_marginTop="29dp"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="showToast"
+        android:text="TOAST TEAM A"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button_toast_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/show_count_b"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/show_count_b"
+        android:layout_alignTop="@+id/button_toast_a"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="showToasta"
+        android:text="TOAST TEAM B"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/show_count_a"
+        android:layout_width="190dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button_toast_a"
+        android:background="@android:color/holo_orange_light"
+        android:onClick="countUp"
+
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="100sp" />
+
+    <TextView
+        android:id="@+id/show_count_b"
+        android:layout_width="190dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button_toast_b"
+        android:background="@android:color/holo_orange_light"
+        android:onClick="countUpi"
+
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="100sp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button7"
+        android:layout_below="@+id/button7"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="countDown"
+        android:text="COUNT DOWN"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button_toast_a"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button_toast_a"
+        android:layout_below="@+id/show_count_a"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="countUp"
+        android:text="COUNT"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button_count_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button11"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="reset1"
+        android:text="RESET"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button8"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/button8"
+        android:layout_below="@+id/button8"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="countDowni"
+        android:text="COUNT DOWN"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/show_count_b"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/show_count_b"
+        android:layout_below="@+id/show_count_b"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="countUpi"
+        android:text="COUNT"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

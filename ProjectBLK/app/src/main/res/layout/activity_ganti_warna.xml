@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6"
+    android:orientation="vertical"
+    tools:context=".GantiWarna.GantiWarna">
+
+    <TextView
+        android:id="@+id/txt_tulisan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Ganti Warna"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/bagi"
+            android:layout_toEndOf="@+id/bagi"
+            android:layout_toRightOf="@+id/bagi"
+            android:background="@android:color/white"
+            android:onClick="gantiCokelat"
+            android:text="COKELAT" />
+
+        <Button
+            android:id="@+id/bagi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/kali"
+            android:layout_toEndOf="@+id/kali"
+            android:layout_toRightOf="@+id/kali"
+            android:background="@android:color/black"
+            android:onClick="gantiHitam"
+            android:text="HITAM"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_biru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/btn_merah"
+            android:layout_toRightOf="@+id/btn_merah"
+            android:background="@android:color/holo_blue_light"
+            android:onClick="gantiBiru"
+            android:text="BIRU" />
+
+        <Button
+            android:id="@+id/kali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_biru"
+            android:layout_toRightOf="@+id/btn_biru"
+            android:background="@android:color/holo_orange_light"
+            android:onClick="gantiKuning"
+            android:text="KUNING" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_merah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/holo_red_light"
+            android:onClick="gantiMerah"
+            android:text="MERAH" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_biru"
+            android:layout_toEndOf="@+id/btn_biru"
+            android:layout_toRightOf="@+id/btn_biru"
+            android:background="@android:color/holo_green_dark"
+            android:onClick="gantiHijau"
+            android:text="HIJAU" />
+    </LinearLayout>
+
+</LinearLayout>

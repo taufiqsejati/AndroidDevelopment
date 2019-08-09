@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BasicView1.BasicView1">
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="save" />
+
+    <Button
+        android:id="@+id/btnOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open" />
+
+    <ImageButton
+        android:id="@+id/btnImg1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/chkAutosave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Autosave" />
+
+
+    <RadioGroup
+        android:id="@+id/rdbGp1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rdb1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Islam" />
+
+        <RadioButton
+            android:id="@+id/rdb2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Kristen" />
+
+        <RadioButton
+            android:id="@+id/rdb3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Hindu" />
+
+        <RadioButton
+            android:id="@+id/rdb4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Budha" />
+    </RadioGroup>
+
+    <ToggleButton
+        android:id="@+id/toggle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
