@@ -11,4 +11,4 @@ Buat sebuah apps kalkulator sederhana dalam bentuk web (menggunakan html, css, j
 Screenshot
 --
 
-![screen shot](wew.jpg)
+![screen shot](wew.png)
