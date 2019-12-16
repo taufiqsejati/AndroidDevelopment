@@ -1,6 +1,5 @@
-Project BLK Part 1
---
 Soal Tes Frontend  (24 jam dari konfirmasi terima soal):
+--
 Buat sebuah apps kalkulator sederhana dalam bentuk web (menggunakan html, css, javascript, atau  react. Bisa juga dalam bentuk mobile (menggunakan java, kotlin, swift, atau react-native). dengan spek:
 
     1. Terdapat 3 buah input number yang masing-masing memiliki checklist di sampingnya
