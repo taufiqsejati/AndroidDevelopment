@@ -4,7 +4,7 @@ const types = {
 };
 
 export const actions = {
-  login: user => {
+  login: (user) => {
     return {type: types.LOGIN, user};
   },
   logout() {
@@ -13,10 +13,9 @@ export const actions = {
 };
 
 const initialState = {
- 
-  "Name": "",
-  "Telp": "",
-  "Email": ""
+  Name: '',
+  Telp: '',
+  Email: '',
   // "image": ""
 };
 
@@ -29,10 +28,9 @@ export const reducer = (state = initialState, action) => {
 
     case types.LOGIN:
       return Object.assign({}, state, {
-      
-        "Name": user.nama_lengkap,
-        "Telp": user.no_telp,
-        "Email": user.email
+        Name: user.nama_lengkap,
+        Telp: user.no_telp,
+        Email: user.email,
         // "image":user.image
       });
 
