@@ -21,6 +21,7 @@ import {
   faSync,
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 class HomeScreen extends PureComponent {
   constructor(props) {
