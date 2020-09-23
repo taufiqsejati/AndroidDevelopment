@@ -70,7 +70,9 @@ class LoginScreen extends PureComponent {
                   if (responseJson.data.hasOwnProperty('data')) {
                     if (responseJson.data.data != null) {
                       this.props.login(responseJson.data.data);
-                      this.props.navigation.dispatch(
+                      this.props.navigation
+                      // .navigate('Home')
+                      .dispatch(
                         CommonActions.reset({
                           index: 0,
                           routes: [{name: 'Home'}],

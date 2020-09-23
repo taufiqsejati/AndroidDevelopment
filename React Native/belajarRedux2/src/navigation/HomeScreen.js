@@ -1,8 +1,6 @@
 import React from 'react';
 import {Home} from '@containers';
 
-
-
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -10,11 +8,10 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <>
-       <Home navigation={this.props.navigation} />
-        </>
-    )
-
+        <Home navigation={this.props.navigation} />
+      </>
+    );
   }
 }
