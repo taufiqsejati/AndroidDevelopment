@@ -23,7 +23,7 @@ const componentName = ({navigation}) => (
       <Gap height={40} />
       <Button
         title="Continue"
-        onPress={() => navigation.navigate('UploadPhoto')}
+        onPress={() => navigation.replace('UploadPhoto')}
       />
     </View>
   </View>

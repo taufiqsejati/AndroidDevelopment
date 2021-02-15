@@ -17,9 +17,16 @@ const componentName = ({navigation}) => (
         <Text style={styles.profession}>Product Designer</Text>
       </View>
       <View>
-        <Button title="Upload and Continue" />
+        <Button
+          title="Upload and Continue"
+          onPress={() => navigation.replace('MainApp')}
+        />
         <Gap height={30} />
-        <Link title="Skip fot this" align="center" />
+        <Link
+          title="Skip fot this"
+          align="center"
+          onPress={() => navigation.replace('MainApp')}
+        />
       </View>
     </View>
   </View>

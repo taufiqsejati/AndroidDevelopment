@@ -8,7 +8,7 @@ const componentName = ({navigation}) => {
     setTimeout(() => {
       navigation.replace('GetStarted');
     }, 1000);
-  }, []);
+  }, [navigation]);
 
   return (
     <View style={styles.page}>

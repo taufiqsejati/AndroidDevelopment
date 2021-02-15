@@ -11,8 +11,12 @@ import Messages from './Messages';
 import ChooseDoctor from './ChooseDoctor';
 import Chatting from './Chatting';
 import UserProfile from './UserProfile';
+import UpdateProfile from './UpdateProfile';
+import DoctorProfile from './DoctorProfile';
 
 export {
+  DoctorProfile,
+  UpdateProfile,
   UserProfile,
   Chatting,
   ChooseDoctor,

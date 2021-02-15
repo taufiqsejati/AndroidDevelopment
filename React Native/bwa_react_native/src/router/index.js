@@ -15,6 +15,8 @@ import {
   ChooseDoctor,
   Chatting,
   UserProfile,
+  UpdateProfile,
+  DoctorProfile,
 } from '../pages';
 import {ButtomNavigator} from '../components';
 
@@ -32,7 +34,7 @@ const MainApp = () => {
 };
 
 const Router = ({params}) => (
-  <Stack.Navigator initialRouteName="MainApp">
+  <Stack.Navigator initialRouteName="Splash">
     <Stack.Screen
       name="Splash"
       component={Splash}
@@ -44,13 +46,13 @@ const Router = ({params}) => (
       options={{headerShown: false}}
     />
     <Stack.Screen
-      name="Login"
-      component={Login}
+      name="Register"
+      component={Register}
       options={{headerShown: false}}
     />
     <Stack.Screen
-      name="Register"
-      component={Register}
+      name="Login"
+      component={Login}
       options={{headerShown: false}}
     />
     <Stack.Screen
@@ -76,6 +78,16 @@ const Router = ({params}) => (
     <Stack.Screen
       name="UserProfile"
       component={UserProfile}
+      options={{headerShown: false}}
+    />
+    <Stack.Screen
+      name="UpdateProfile"
+      component={UpdateProfile}
+      options={{headerShown: false}}
+    />
+    <Stack.Screen
+      name="DoctorProfile"
+      component={DoctorProfile}
       options={{headerShown: false}}
     />
     <Stack.Screen

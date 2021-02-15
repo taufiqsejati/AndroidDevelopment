@@ -1,11 +1,11 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {colors, fonts} from '../../../utils';
 
-const componentName = ({title, size, align}) => (
-  <View>
+const componentName = ({title, size, align, onPress}) => (
+  <TouchableOpacity onPress={onPress}>
     <Text style={styles.text(size, align)}>{title}</Text>
-  </View>
+  </TouchableOpacity>
 );
 const styles = StyleSheet.create({
   text: (size, align) => ({
