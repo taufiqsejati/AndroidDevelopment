@@ -15,7 +15,7 @@ const componentName = ({navigation}) => (
     <View>
       <Button
         title="Get Started"
-        onPress={() => navigation.replace('Register')}
+        onPress={() => navigation.navigate('Register')}
       />
       <Gap height={16} />
       <Button

@@ -1,36 +1,61 @@
-import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-import {IconAddPhoto, nullPhoto} from '../../assets';
+import React, {useState} from 'react';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {IconAddPhoto, IconRemovePhoto, nullPhoto} from '../../assets';
 import {Button, Gap, Header, Link} from '../../components';
 import {colors, fonts} from '../../utils';
+import ImagePicker from 'react-native-image-picker';
+import {showMessage} from 'react-native-flash-message';
 
-const componentName = ({navigation}) => (
-  <View style={styles.page}>
-    <Header title="Upload Photo" onPress={() => navigation.goBack()} />
-    <View style={styles.content}>
-      <View style={styles.profile}>
-        <View style={styles.avatarWrapper}>
-          <Image source={nullPhoto} style={styles.avatar} />
-          <IconAddPhoto style={styles.addPhoto} />
+const componentName = ({navigation}) => {
+  const [hasPhoto, setHasPhoto] = useState(false);
+  const [photo, setPhoto] = useState(nullPhoto);
+  const getImage = () => {
+    ImagePicker.launchImageLibrary({}, (response) => {
+      console.log('response:', response);
+      if (response.didCancel || response.error) {
+        showMessage({
+          message: 'gajadi pilih photo ya?',
+          type: 'default',
+          backgroundColor: colors.error,
+          color: colors.white,
+        });
+      } else {
+        const source = {uri: response.uri};
+        setPhoto(source);
+        setHasPhoto(true);
+      }
+    });
+  };
+  return (
+    <View style={styles.page}>
+      <Header title="Upload Photo" onPress={() => navigation.goBack()} />
+      <View style={styles.content}>
+        <View style={styles.profile}>
+          <TouchableOpacity style={styles.avatarWrapper} onPress={getImage}>
+            <Image source={photo} style={styles.avatar} />
+            {hasPhoto && <IconRemovePhoto style={styles.addPhoto} />}
+            {!hasPhoto && <IconAddPhoto style={styles.addPhoto} />}
+          </TouchableOpacity>
+          <Text style={styles.name}>Shayna Melinda</Text>
+          <Text style={styles.profession}>Product Designer</Text>
         </View>
-        <Text style={styles.name}>Shayna Melinda</Text>
-        <Text style={styles.profession}>Product Designer</Text>
-      </View>
-      <View>
-        <Button
-          title="Upload and Continue"
-          onPress={() => navigation.replace('MainApp')}
-        />
-        <Gap height={30} />
-        <Link
-          title="Skip fot this"
-          align="center"
-          onPress={() => navigation.replace('MainApp')}
-        />
+        <View>
+          <Button
+            disable={!hasPhoto}
+            title="Upload and Continue"
+            onPress={() => navigation.replace('MainApp')}
+          />
+          <Gap height={30} />
+          <Link
+            title="Skip fot this"
+            align="center"
+            onPress={() => navigation.replace('MainApp')}
+          />
+        </View>
       </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default componentName;
 
@@ -50,6 +75,7 @@ const styles = StyleSheet.create({
   avatar: {
     width: 110,
     height: 110,
+    borderRadius: 110 / 2,
   },
   avatarWrapper: {
     width: 130,
