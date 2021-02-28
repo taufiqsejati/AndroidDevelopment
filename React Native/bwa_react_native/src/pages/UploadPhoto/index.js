@@ -1,30 +1,44 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import ImagePicker from 'react-native-image-picker';
 import {IconAddPhoto, IconRemovePhoto, nullPhoto} from '../../assets';
 import {Button, Gap, Header, Link} from '../../components';
-import {colors, fonts} from '../../utils';
-import ImagePicker from 'react-native-image-picker';
-import {showMessage} from 'react-native-flash-message';
+import {Fire} from '../../config';
+import {colors, fonts, showError, storeData} from '../../utils';
 
-const componentName = ({navigation}) => {
+const componentName = ({navigation, route}) => {
+  const {fullName, profession, uid} = route.params;
   const [hasPhoto, setHasPhoto] = useState(false);
   const [photo, setPhoto] = useState(nullPhoto);
+  const [photoForDB, setPhotoForDB] = useState('');
   const getImage = () => {
-    ImagePicker.launchImageLibrary({}, (response) => {
-      console.log('response:', response);
-      if (response.didCancel || response.error) {
-        showMessage({
-          message: 'gajadi pilih photo ya?',
-          type: 'default',
-          backgroundColor: colors.error,
-          color: colors.white,
-        });
-      } else {
-        const source = {uri: response.uri};
-        setPhoto(source);
-        setHasPhoto(true);
-      }
-    });
+    ImagePicker.launchImageLibrary(
+      {quality: 0.5, maxWidth: 200, maxHeight: 200},
+      (response) => {
+        console.log('response:', response);
+        if (response.didCancel || response.error) {
+          showError('gajadi pilih photo ya?');
+        } else {
+          console.log('response getImage: ', response);
+          const source = {uri: response.uri};
+
+          setPhotoForDB(`data:${response.type};base64, ${response.data}`);
+          setPhoto(source);
+          setHasPhoto(true);
+        }
+      },
+    );
+  };
+  const uploadAndContinue = () => {
+    Fire.database()
+      .ref('users/' + uid + '/')
+      .update({photo: photoForDB});
+
+    const data = route.params;
+    data.photo = photoForDB;
+
+    storeData('user', data);
+    navigation.replace('MainApp');
   };
   return (
     <View style={styles.page}>
@@ -36,14 +50,14 @@ const componentName = ({navigation}) => {
             {hasPhoto && <IconRemovePhoto style={styles.addPhoto} />}
             {!hasPhoto && <IconAddPhoto style={styles.addPhoto} />}
           </TouchableOpacity>
-          <Text style={styles.name}>Shayna Melinda</Text>
-          <Text style={styles.profession}>Product Designer</Text>
+          <Text style={styles.name}>{fullName}</Text>
+          <Text style={styles.profession}>{profession}</Text>
         </View>
         <View>
           <Button
             disable={!hasPhoto}
             title="Upload and Continue"
-            onPress={() => navigation.replace('MainApp')}
+            onPress={uploadAndContinue}
           />
           <Gap height={30} />
           <Link

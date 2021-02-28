@@ -2,12 +2,21 @@ import React, {useEffect} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {ILLogo} from '../../components/molecules';
 import {colors, fonts} from '../../utils';
+import {Fire} from '../../config';
 
-const componentName = ({navigation}) => {
+const Splash = ({navigation}) => {
   useEffect(() => {
-    setTimeout(() => {
-      navigation.replace('GetStarted');
-    }, 1000);
+    const interval = setTimeout(() => {
+      Fire.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // console.log('user:', user);
+          navigation.replace('MainApp');
+        } else {
+          navigation.replace('GetStarted');
+        }
+      });
+    }, 800);
+    return () => clearInterval(interval);
   }, [navigation]);
 
   return (
@@ -32,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default componentName;
+export default Splash;

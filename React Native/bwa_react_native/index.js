@@ -14,4 +14,5 @@ LogBox.ignoreLogs([
   'Warning: Async Storage has been extracted from react-native core',
   'Warning: Each',
   'Warning: Failed',
+  'Setting a timer',
 ]);
