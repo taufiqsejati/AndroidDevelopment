@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {nullPhoto} from '../../assets';
 import {Gap, Header, List, Profile} from '../../components';
 import {Fire} from '../../config';
 import {getData, showError} from '../../utils';
@@ -8,6 +9,7 @@ const UserProfile = ({navigation}) => {
   const [profile, setProfile] = useState({
     fullName: '',
     profession: '',
+    photo: nullPhoto,
   });
   useEffect(() => {
     getData('user').then((res) => {
@@ -20,7 +22,7 @@ const UserProfile = ({navigation}) => {
     Fire.auth()
       .signOut()
       .then(() => {
-        console.log('success sign out');
+        // console.log('success sign out');
         navigation.replace('GetStarted');
       })
       .catch((err) => {

@@ -21,12 +21,12 @@ const UpdateProfile = ({navigation}) => {
       const data = res;
       setPhoto({uri: res.photo});
       setProfile(data);
-      console.log('fufu', data);
+      // console.log('fufu', data);
     });
   }, []);
   const update = () => {
-    console.log('profile: ', profile);
-    console.log('new password :', password);
+    // console.log('profile: ', profile);
+    // console.log('new password :', password);
 
     if (password.length > 0) {
       if (password.length < 6) {
@@ -57,7 +57,7 @@ const UpdateProfile = ({navigation}) => {
       .ref(`users/${profile.uid}/`)
       .update(data)
       .then(() => {
-        console.log('success : ', data);
+        // console.log('success : ', data);
         storeData('user', data);
       })
       .catch((err) => showError(err.message));
@@ -73,13 +73,13 @@ const UpdateProfile = ({navigation}) => {
     ImagePicker.launchImageLibrary(
       {quality: 0.5, maxWidth: 200, maxHeight: 200},
       (response) => {
-        console.log('response:', response);
+        // console.log('response:', response);
         if (response.didCancel || response.error) {
           showError('gajadi pilih photo ya?');
           setPhotoForDB(profile.photo);
           setPhoto(profile.photo);
         } else {
-          console.log('response getImage: ', response);
+          // console.log('response getImage: ', response);
           const source = {uri: response.uri};
 
           setPhotoForDB(`data:${response.type};base64, ${response.data}`);

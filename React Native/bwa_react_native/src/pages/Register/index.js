@@ -38,7 +38,7 @@ const Register = ({navigation}) => {
         storeData('user', data);
         navigation.navigate('UploadPhoto', data);
 
-        console.log('register success:', success);
+        // console.log('register success:', success);
       })
       .catch((error) => {
         const errorMessage = error.message;

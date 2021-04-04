@@ -15,14 +15,13 @@ const componentName = ({navigation, route}) => {
     ImagePicker.launchImageLibrary(
       {quality: 0.5, maxWidth: 200, maxHeight: 200},
       (response) => {
-        console.log('response:', response);
+        // console.log('response:', response);
         if (response.didCancel || response.error) {
           showError('gajadi pilih photo ya?');
         } else {
-          console.log('response getImage: ', response);
-          const source = {uri: response.uri};
-
+          // console.log('response getImage: ', response);
           setPhotoForDB(`data:${response.type};base64, ${response.data}`);
+          const source = {uri: response.uri};
           setPhoto(source);
           setHasPhoto(true);
         }

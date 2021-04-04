@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {ImageBackground, Text, View, StyleSheet} from 'react-native';
 import {
   DummyHospital1,
@@ -7,36 +7,46 @@ import {
   ILHospitalBG,
 } from '../../assets';
 import {ListHospital} from '../../components';
+import {Fire} from '../../config';
 import {colors, fonts} from '../../utils';
 
-const Hospitals = ({params}) => (
-  <View style={styles.page}>
-    <ImageBackground source={ILHospitalBG} style={styles.background}>
-      <Text style={styles.title}>Nearby Hospitals</Text>
-      <Text style={styles.desc}>3 Tersedia</Text>
-    </ImageBackground>
-    <View style={styles.content}>
-      <ListHospital
-        type="Rumah Sakit"
-        name="Citra Bunga Merdeka"
-        address=""
-        pic={DummyHospital1}
-      />
-      <ListHospital
-        type="Rumah Sakit Anak"
-        name="Anak Happy Family & Kids"
-        address=""
-        pic={DummyHospital2}
-      />
-      <ListHospital
-        type="Rumah Sakit Jiwa"
-        name="Tingkatan Paling Atas"
-        address=""
-        pic={DummyHospital3}
-      />
+const Hospitals = ({params}) => {
+  const [hospital, setHospital] = useState([]);
+  useEffect(() => {
+    Fire.database()
+      .ref('hospital/')
+      .once('value')
+      .then((res) => {
+        // console.log('data: ', res.val());
+        if (res.val()) {
+          setHospital(res.val());
+        }
+      })
+      .catch((err) => {
+        showError(err.message);
+      });
+  }, []);
+  return (
+    <View style={styles.page}>
+      <ImageBackground source={ILHospitalBG} style={styles.background}>
+        <Text style={styles.title}>Nearby Hospitals</Text>
+        <Text style={styles.desc}>3 Tersedia</Text>
+      </ImageBackground>
+      <View style={styles.content}>
+        {hospital.map((item) => {
+          return (
+            <ListHospital
+              type={item.type}
+              name={item.name}
+              address={item.address}
+              image={item.image}
+            />
+          );
+        })}
+      </View>
     </View>
-  </View>
-);
+  );
+};
 
 export default Hospitals;
 const styles = StyleSheet.create({

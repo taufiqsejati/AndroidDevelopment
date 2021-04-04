@@ -12,12 +12,12 @@ const componentName = ({navigation}) => {
   });
   const dispatch = useDispatch();
   const login = () => {
-    console.log('form :', form);
+    // console.log('form :', form);
     dispatch({type: 'SET_LOADING', value: true});
     Fire.auth()
       .signInWithEmailAndPassword(form.email, form.password)
       .then((res) => {
-        console.log('success:', res);
+        // console.log('success:', res);
         dispatch({type: 'SET_LOADING', value: false});
         Fire.database()
           .ref(`users/${res.user.uid}/`)
@@ -32,7 +32,7 @@ const componentName = ({navigation}) => {
           });
       })
       .catch((err) => {
-        console.log('error:', err);
+        // console.log('error:', err);
         dispatch({type: 'SET_LOADING', value: false});
         showError(err.message);
       });
