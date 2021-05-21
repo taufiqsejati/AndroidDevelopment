@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "npx react-native run-android",
+    "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "emulator": "emulator -avd Nexus_5_API_28"
+    "testing-release": "npx react-native run-android --variant=release",
+    "release-build": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && cd android && gradlew assembleRelease -x bundleReleaseJsAndAssets && cd ..",
+    "release-bundle": "cd android && gradlew bundleRelease -x bundleReleaseJsAndAssets && cd ..",
+    "clean": "cd android && gradlew clean"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.10.0",
