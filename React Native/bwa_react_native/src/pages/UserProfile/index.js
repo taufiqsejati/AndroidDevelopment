@@ -23,7 +23,7 @@ const UserProfile = ({navigation}) => {
       .signOut()
       .then(() => {
         // console.log('success sign out');
-        navigation.replace('GetStarted');
+        navigation.replace('Auth');
       })
       .catch((err) => {
         showError(err.message);

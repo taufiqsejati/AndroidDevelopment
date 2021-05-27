@@ -37,7 +37,7 @@ const componentName = ({navigation, route}) => {
     data.photo = photoForDB;
 
     storeData('user', data);
-    navigation.replace('MainApp');
+    navigation.replace('App');
   };
   return (
     <View style={styles.page}>
@@ -62,7 +62,7 @@ const componentName = ({navigation, route}) => {
           <Link
             title="Skip fot this"
             align="center"
-            onPress={() => navigation.replace('MainApp')}
+            onPress={() => navigation.replace('App')}
           />
         </View>
       </View>

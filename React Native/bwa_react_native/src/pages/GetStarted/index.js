@@ -22,7 +22,7 @@ const componentName = ({navigation}) => {
         <Button
           title="Sign in"
           type="secondary"
-          onPress={() => navigation.replace('Login')}
+          onPress={() => navigation.navigate('Login')}
         />
       </View>
     </ImageBackground>

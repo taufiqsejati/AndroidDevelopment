@@ -26,7 +26,7 @@ const componentName = ({navigation}) => {
             // console.log('data user :', resDB.val());
             if (resDB.val()) {
               storeData('user', resDB.val());
-              navigation.replace('MainApp');
+              navigation.replace('App');
             } else {
             }
           });

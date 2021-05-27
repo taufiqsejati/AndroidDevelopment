@@ -10,9 +10,9 @@ const Splash = ({navigation}) => {
       setTimeout(() => {
         if (user) {
           // console.log('user:', user);
-          navigation.replace('MainApp');
+          navigation.replace('App');
         } else {
-          navigation.replace('GetStarted');
+          navigation.replace('Auth');
         }
       }, 800);
     });

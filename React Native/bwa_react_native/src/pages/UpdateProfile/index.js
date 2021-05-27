@@ -34,11 +34,11 @@ const UpdateProfile = ({navigation}) => {
       } else {
         updatePassword();
         UpdateProfileData();
-        navigation.replace('MainApp');
+        navigation.replace('App');
       }
     } else {
       UpdateProfileData();
-      navigation.replace('MainApp');
+      navigation.replace('App');
     }
   };
   const updatePassword = () => {
