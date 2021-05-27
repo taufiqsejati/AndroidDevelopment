@@ -17,4 +17,5 @@ LogBox.ignoreLogs([
   'Setting a timer',
   ` @firebase/database: FIREBASE WARNING: Using an unspecified index.`,
   `Warning: AsyncStorage has been extracted from react-native core and will be removed in a future release. It can now be installed and imported from '@react-native-community/async-storage' instead of 'react-native'.`,
+  `Warning: AsyncStorage has been extracted from react-native core and will be removed in a future release. It can now be installed and imported from '@react-native-community/async-storage' instead of 'react-native'. See https://github.com/react-native-community/async-storage `,
 ]);
