@@ -8,7 +8,7 @@ import store from './src/redux/store';
 
 const MainApp = ({params}) => {
   const stateGlobal = useSelector((state) => state);
-  console.log('State Global : ', stateGlobal);
+  // console.log('State Global : ', stateGlobal);
   return (
     <>
       <NavigationContainer>

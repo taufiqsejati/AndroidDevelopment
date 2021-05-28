@@ -35,7 +35,7 @@ const Messages = ({navigation}) => {
     const urlHistory = `messages/${user.uid}/`;
     const messagesDB = rootDB.child(urlHistory);
     messagesDB.on('value', async (snapshot) => {
-      console.log('data history: ', snapshot.val());
+      // console.log('data history: ', snapshot.val());
       if (snapshot.val()) {
         const oldData = snapshot.val();
         const data = [];
@@ -43,7 +43,7 @@ const Messages = ({navigation}) => {
         const promises = await Object.keys(oldData).map(async (key) => {
           const urlUidDoctor = `doctors/${oldData[key].uidPartner}`;
           const detailDoctor = await rootDB.child(urlUidDoctor).once('value');
-          console.log('detail doctors :', detailDoctor);
+          // console.log('detail doctors :', detailDoctor);
           data.push({
             id: key,
             detailDoctor: detailDoctor.val(),
@@ -52,7 +52,7 @@ const Messages = ({navigation}) => {
         });
         await Promise.all(promises);
 
-        console.log('new data history : ', data);
+        // console.log('new data history : ', data);
         setHistoryChat(data);
       }
     });

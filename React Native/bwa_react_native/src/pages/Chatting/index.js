@@ -43,7 +43,7 @@ const Chatting = ({navigation, route}) => {
               data: newDataChat,
             });
           });
-          console.log('all data chat: ', allDataChat);
+          // console.log('all data chat: ', allDataChat);
           setChatData(allDataChat);
         }
       });
